@@ -22,18 +22,19 @@ class Game
          end
          switch_turn
          @moves += 1
-       end
+	   end
+	   
        @grid.render
        # Switch the turn to display the winning player
-
-
+       
+	   switch_turn
        if @grid.full? && !(@grid.finished?)
          puts "Game over"
          puts "It is Draw"
        else
          puts "Player #{@active.name}(#{@active.symb}) has won."
        end
-       switch_turn
+       
 
    end
 
