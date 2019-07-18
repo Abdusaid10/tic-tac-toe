@@ -1,6 +1,6 @@
 # Description
 This is the second collaborative Ruby project on building the tic-tac-toe game. There are two folders namely, the "lib" and "bin" folders. The bin folder contains the intro to the game class; and the lib folder contains two files namely, the board.rb and the player.rb, which contain the actual game logic. 
-#How to play
+# How to play
 <ul>
 <li>Two players are needed.</li> 
 <li>They are required to input their chosen names.</li> 
