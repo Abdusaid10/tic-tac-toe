@@ -9,9 +9,11 @@ This is the second collaborative Ruby project on building the tic-tac-toe game. 
 <li>The chosen number can not be chosen twice.</li>
 <li>Once a selected mark appears three consecutive times either horizontally, vertically or diagonally, then that player with the mark is the winner.</li>
 <li>If there is no any three consecutive mark, then it becomes a draw.</li>
-</ul>
+</ul> 
+
 # Contributors
 Emmanuel J. Kamala (<a href="https://github.com/emmanuelkamala">@emmanuelkamala</a>)<br>
 Abdusaid Abdurasulov (<a href="https://github.com/Abdusaid10">@abdusaid10</a>)
+
 # Live Version
 <a href="#">Live Version</a>
