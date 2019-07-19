@@ -10,16 +10,16 @@ class Grid
   end
 
   def put_piece(index, piece)
-    x = (index / 3)
-    y = (index % 3)
+    @x = (index / 3)
+    @y = (index % 3)
     return nil if index > 8
     return nil if index < 0
 
-    if (@board[x][y] != ' ')
+    if (@board[@x][@y] != ' ')
       return nil
     end
     
-    @board[x][y] = piece
+    @board[@x][@y] = piece
     @last_piece = piece;
     true
   end
@@ -37,7 +37,7 @@ class Grid
   def full?  
     for i in (0..2)
       for j in (0..2)
-        if (@board[x][y] != ' ')
+        if (@board[i][j] == ' ')
           return false
         end
       end

@@ -5,9 +5,12 @@ class Game
   def initialize
     @grid = Grid.new
   end
+  
+  def start(p1, p2)
+    @p1=Player.new(p1, "x")
+    @p2=Player.new(p2, "o")
 
-  def start
-    @active = [@p1,@p2].sample
+    @active = [@p1, @p2].sample
     @moves = 0
     until game_over?
       @grid.render
@@ -29,6 +32,7 @@ class Game
     else
       puts "Player #{@active.name}(#{@active.symb}) has won."
     end
+
   end
 
   def game_over?
