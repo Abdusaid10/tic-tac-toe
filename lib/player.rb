@@ -1,8 +1,8 @@
 class Player
-  attr_accessor :name, :symb
+  attr_reader :name, :symb
 
   def initialize(name, symb)
-      @name = name
-      @symb = symb
+    @name = name
+    @symb = symb
   end
 end
