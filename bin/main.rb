@@ -1,6 +1,6 @@
 require_relative "../lib/game.rb"
 require_relative "../lib/player.rb"
-
+require_relative "../lib/grid.rb"
 puts "Welcome to tic-tac-toe"
 puts "Instructions: The boxes are numbered from 1 to 9"
 puts "A player has to input a number between 1 to 9"
@@ -18,7 +18,28 @@ p2 = gets.chomp,"o"
 @p2 = Player.new(name: p2, symb: "o")
 players=[@p1, @p2]
 
-@game = Game.new(players).play
+@game = Game.new(players)
+@grid =Grid.new
+
+until @game.game_over?
+  @grid.render
+  name=@game.current_player_name.to_s
+  puts "#{name}' turn. Enter number between 1 and 9: "
+  until @grid.put_piece(move=(gets.chomp.to_i - 1), @game.current_player_symb)
+    print "[Error] Invalid move, please move again: "
+  end
+
+  if @grid.finished?
+    puts "#{name} has won"
+    break
+  elsif @grid.full? && !(@grid.finished?)
+    puts "It is a Draw"
+    break
+  end
+  @game.switch_turn
+end
+@grid.render
+
 
 
 

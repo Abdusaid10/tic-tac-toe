@@ -14,38 +14,29 @@ class Game
     @current_player, @next_player = @next_player, @current_player
   end
 
-  def ask_move
-    "#{current_player.name}'s turn, Enter number between 1 and 9: "
+  def current_player_name
+    return current_player.name
+  end
+  
+  def current_player_symb
+    return current_player.symb
   end
 
-  def get_move(move)
-    return @grid.put_piece(move.to_i-1, current_player.symb)
+  def get_move(move, smb)
+    return @grid.put_piece(move.to_i-1, smb=current_player.symb)
   end
   
   def game_over?
     # Check the last move for victory condition
     if @grid.finished?
-      return "#{current_player.name} won" 
+      return true #{current_player.name} won" 
     elsif @grid.full? && !(@grid.finished?)
-      return "It is a Draw" 
+      return false  #"It is a Draw"
+    else
+      return 
     end
-    false
+    
   end
  
-  def play
-    until game_over?
-      @grid.render
-      print ask_move
-      until get_move(gets.chomp)
-        print "[Error] Invalid move, please move again: "
-      end
-      if game_over?
-        puts game_over?
-      end
-      switch_turn
-    end
-    @grid.render
-    switch_turn
-  end
 end
 
