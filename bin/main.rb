@@ -23,14 +23,14 @@ players=[@p1, @p2]
 
 until @game.game_over?
   @grid.render
-  name=@game.current_player_name.to_s
-  puts "#{name}' turn. Enter number between 1 and 9: "
+  name=@game.current_player_name
+  print "\n#{name}' turn. Enter number between 1 and 9: "
   until @grid.put_piece(move=(gets.chomp.to_i - 1), @game.current_player_symb)
     print "[Error] Invalid move, please move again: "
   end
 
   if @grid.finished?
-    puts "#{name} has won"
+    print "#{name} has won\n"
     break
   elsif @grid.full? && !(@grid.finished?)
     puts "It is a Draw"
@@ -39,7 +39,7 @@ until @game.game_over?
   @game.switch_turn
 end
 @grid.render
-
+@game.switch_turn
 
 
 
