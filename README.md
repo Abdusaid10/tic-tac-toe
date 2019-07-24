@@ -16,4 +16,4 @@ Emmanuel J. Kamala (<a href="https://github.com/emmanuelkamala">@emmanuelkamala<
 Abdusaid Abdurasulov (<a href="https://github.com/Abdusaid10">@abdusaid10</a>)
 
 # Live Version
-<a href="#">Live Version</a>
+<a href="https://repl.it/@EmmanuelKamala/Tic-Tac-Toe">Live Version</a>
